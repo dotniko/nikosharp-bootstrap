@@ -1,0 +1,20 @@
+attribute Version
+    value: u32
+;
+
+attribute Deprecated
+    message: string
+;
+
+modifier command: function
+;
+
+type CommandResult
+    message: string = ""
+;
+
+[Version(1)]
+[Deprecated("Use help2 instead.")]
+command function help(): CommandResult
+    return CommandResult { }
+;

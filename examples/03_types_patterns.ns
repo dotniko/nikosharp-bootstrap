@@ -1,0 +1,16 @@
+type Point
+    x: number
+    y: number
+
+    property length: number
+        return (self.x ** 2 + self.y ** 2) ** 0.5
+    ;
+;
+
+function classify(point: Point): string
+    return switch point
+        Point { x = 0, y = 0 } => "origin"
+        Point { x = 0, y = y } => "vertical {y}"
+        else => "other"
+    ;
+;

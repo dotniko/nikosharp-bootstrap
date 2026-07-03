@@ -1,0 +1,12 @@
+type LoadError
+    message: string
+;
+
+async function readText(path: string): string throws LoadError
+    return path
+;
+
+async function load(path: string): string throws LoadError
+    local text = try await readText(path)
+    return text
+;
